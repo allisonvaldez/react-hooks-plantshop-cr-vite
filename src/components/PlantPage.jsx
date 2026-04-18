@@ -12,11 +12,7 @@ function PlantPage() {
 
   // Create useEffect for initial mounting
   useEffect(() => {
-    fetch("http://localhost:6001/plants", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newPlant)
-    })
+    fetch("http://localhost:6001/plants")
       .then(response => response.json())
       .then(data => setPlants(data))
       .catch(error => console.error("Error fetching plants: ", error));

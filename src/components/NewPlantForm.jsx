@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import React from "react";
 
-function NewPlantForm() {
+function NewPlantForm({ onAddPlant }) {
   // Set states of name, image, and price of plant
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
@@ -11,7 +11,7 @@ function NewPlantForm() {
   // Create a function for submitting and prevent default behavior
   function handleSubmit(e) {
     e.preventDefault();
-    onAddPlant({ name, image, price: parseFloat(price) });
+    onAddPlant({ name, image, price });
     // Make sure to clear out fields
     setName("");
     setImage("");
